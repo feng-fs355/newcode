@@ -1,0 +1,37 @@
+= Redwood Test Automation Framework
+
+== Requirements :
+
+* Python 2.7 or later
+* Tested on Ubuntu 14.04
+
+== Release Notes :
+
+TBA
+
+== Limitations:
+
+TBA
+
+== Setup :
+
+For Linux(Ubuntu) installation we recommend installing python-pip: `sudo apt-get install python-pip`.
+On Windows/MAC you can install pip via:  https://pip.pypa.io/en/stable/installing/
+
+`pip` is a python module installation tool that can remotely pull modules and their dependencies.
+ 
+=== For Windows 
+
+TBA
+
+=== For Linux/Mac :
+
+. Change application permissions:  `chmod +x cli.py`
+
+== Usage :
+
+pybot -v HOST:192.168.8.100 --pythonpath lib tests/redwood
+
+
+  
+

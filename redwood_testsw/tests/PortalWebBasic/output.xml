@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170302 14:32:17.035" generator="Robot 3.0 (Python 2.7.12 on linux2)">
+<suite source="/home/idltest/newcode-1228/20170207/redwood_testsw/tests/PortalWebBasic/PortalWebBasic_feng.robot" id="s1" name="PortalWebBasic feng">
+<kw type="setup" name="Suite Setup Actions">
+<doc>Opens browser and start log captures</doc>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${OUTPUTDIR}</arg>
+</arguments>
+<status status="PASS" endtime="20170302 14:32:20.130" starttime="20170302 14:32:20.129"></status>
+</kw>
+<kw name="Set Web Driver" library="APWEB">
+<arguments>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20170302 14:32:20.130" level="INFO">
+Creating web driver: firefox</msg>
+<status status="PASS" endtime="20170302 14:32:20.131" starttime="20170302 14:32:20.130"></status>
+</kw>
+<kw name="Login" library="APWEB">
+<arguments>
+<arg>192.168.8.1</arg>
+<arg>None</arg>
+<arg>password</arg>
+</arguments>
+<msg timestamp="20170302 14:32:20.131" level="INFO">
+login web with: None:password</msg>
+<msg timestamp="20170302 14:32:33.539" level="FAIL">WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</msg>
+<status status="FAIL" endtime="20170302 14:32:33.539" starttime="20170302 14:32:20.131"></status>
+</kw>
+<status status="FAIL" endtime="20170302 14:32:33.540" starttime="20170302 14:32:20.128"></status>
+</kw>
+<test id="s1-t1" name="Case1_Check_LAN_Status">
+<status status="FAIL" endtime="20170302 14:32:33.543" critical="yes" starttime="20170302 14:32:33.541">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t2" name="Case2_Check_WAN_Status">
+<status status="FAIL" endtime="20170302 14:32:33.545" critical="yes" starttime="20170302 14:32:33.544">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t3" name="Check 2.4G Status">
+<status status="FAIL" endtime="20170302 14:32:33.547" critical="yes" starttime="20170302 14:32:33.546">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t4" name="Check 5G Status">
+<status status="FAIL" endtime="20170302 14:32:33.548" critical="yes" starttime="20170302 14:32:33.548">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t5" name="Check Router Information">
+<status status="FAIL" endtime="20170302 14:32:33.550" critical="yes" starttime="20170302 14:32:33.549">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t6" name="Check Attached Devices - Wired">
+<status status="FAIL" endtime="20170302 14:32:33.551" critical="yes" starttime="20170302 14:32:33.551">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t7" name="Check Attached Devices - 2.4G">
+<status status="FAIL" endtime="20170302 14:32:33.553" critical="yes" starttime="20170302 14:32:33.552">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t8" name="Check Attached Devices - 5G">
+<status status="FAIL" endtime="20170302 14:32:33.554" critical="yes" starttime="20170302 14:32:33.553">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t9" name="Check Attached Devices - 2.4G Guest">
+<status status="FAIL" endtime="20170302 14:32:33.556" critical="yes" starttime="20170302 14:32:33.555">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<test id="s1-t10" name="Check Attached Devices - 5G Guest">
+<status status="FAIL" endtime="20170302 14:32:33.559" critical="yes" starttime="20170302 14:32:33.558">Parent suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+</status>
+</test>
+<kw type="teardown" name="Suite Teardown Actions">
+<doc>Close browser and stop log captures</doc>
+<kw name="Logout" library="APWEB">
+<status status="PASS" endtime="20170302 14:32:43.706" starttime="20170302 14:32:33.561"></status>
+</kw>
+<kw name="Stop Log Capture" library="APWEB">
+<arguments>
+<arg>${SUITE_LOG_ID}</arg>
+</arguments>
+<msg timestamp="20170302 14:32:43.708" level="FAIL">AttributeError: 'APWL_PortalWebBase' object has no attribute 'outpath'</msg>
+<status status="FAIL" endtime="20170302 14:32:43.708" starttime="20170302 14:32:43.706"></status>
+</kw>
+<kw name="Close Browser" library="APWEB">
+<msg timestamp="20170302 14:32:43.756" level="INFO">'NoneType' object has no attribute 'path'</msg>
+<status status="PASS" endtime="20170302 14:32:43.756" starttime="20170302 14:32:43.709"></status>
+</kw>
+<status status="FAIL" endtime="20170302 14:32:43.757" starttime="20170302 14:32:33.560">AttributeError: 'APWL_PortalWebBase' object has no attribute 'outpath'</status>
+</kw>
+<doc>Testing robot.
+
+robot framework practice with ABC</doc>
+<status status="FAIL" endtime="20170302 14:32:43.758" starttime="20170302 14:32:17.041">Suite setup failed:
+WebDriverException: Message: Reached error page: about:certerror?e=nssBadCert&amp;u=https%3A//192.168.8.1/&amp;c=UTF-8&amp;f=regular&amp;d=192.168.8.1%20uses%20an%20invalid%20security%20certificate.%0A%0AThe%20certificate%20is%20not%20trusted%20because%20the%20issuer%20certificate%20is%20unknown.%0AThe%20server%20might%20not%20be%20sending%20the%20appropriate%20intermediate%20certificates.%0AAn%20additional%20root%20certificate%20may%20need%20to%20be%20imported.%0AThe%20certificate%20is%20only%20valid%20for%20the%20following%20names%3A%0A%20%20portalwifi.com%2C%20myportalwifi.com%2C%20support.portalwifi.com%20%20%0A%0AError%20code%3A%20%3Ca%20id%3D%22errorCode%22%20title%3D%22SEC_ERROR_UNKNOWN_ISSUER%22%3ESEC_ERROR_UNKNOWN_ISSUER%3C/a%3E%0A
+
+
+Also suite teardown failed:
+AttributeError: 'APWL_PortalWebBase' object has no attribute 'outpath'</status>
+</suite>
+<statistics>
+<total>
+<stat fail="10" pass="0">Critical Tests</stat>
+<stat fail="10" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="10" id="s1" name="PortalWebBasic feng" pass="0">PortalWebBasic feng</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,5 @@
+*.pyc
+report/
+*.log
+*.apk
+*.ipa

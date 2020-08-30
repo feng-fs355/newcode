@@ -1,0 +1,135 @@
+import atexit
+import md5
+import sys
+import re
+
+from robot.libraries import Telnet
+from robot.api import logger
+
+class OpenWrtCore(object):
+
+    def __init__(self):
+        # logger.console("create new Telnet")
+        self._tc = Telnet.Telnet()
+  
+
+
+    def _connect(self, host = None, prompt = None, user = None, password = None):
+        try:
+            self._tc.open_connection(host, prompt=prompt)
+            if (user is not None):
+                logger.info("try to login with:"+user+":"+password)
+                # logger.info("prompt: "+prompt)
+                self._tc.login(user, password, login_timeout="5 second")
+            else:
+                self._tc.read_until_prompt()
+        except Exception, e:
+            logger.console(e)
+            #raise OpenWrtError('Telnet connection failed')
+
+    def _send_cmd(self, cmd):
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _set_ssid(self, ssid):
+        cmd = ""
+        self._result = self._tc.execute_command(cmd)
+
+    def _get_mac_address(self):
+        cmd = "ifconfig | grep eth0 | awk '{ print $5 }'"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_ssid(self, iface):
+        cmd = "uci get wireless.@wifi-iface["+str(iface)+"].ssid"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_encryption(self, iface):
+        cmd = "uci get wireless.@wifi-iface[" + str(iface) + "].encryption"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_password(self, iface):
+        cmd = "uci get wireless.@wifi-iface[" + str(iface) + "].key"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_ssid_is_broadcast(self, iface):
+        cmd = "uci get wireless.@wifi-iface[" + str(iface) + "].hidden"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_wan_ipaddr(self):
+        cmd = "uci -P/var/state get network.wan.ipaddr"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_wan_gateway(self):
+        cmd = "uci -P/var/state get network.wan.gateway"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_wan_netmask(self):
+        cmd = "uci -P/var/state get network.wan.netmask"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_cpuinfo(self):
+        cmd = "cat /proc/cpuinfo"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_version(self):
+        cmd = "cat /proc/version"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_wan_mode(self):
+        cmd = "uci get network.wan.proto"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_wan_username(self):
+        cmd = "uci -P/var/state get network.wan.username"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_wan_password(self):
+        cmd = "uci -P/var/state get network.wan.password"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_wan_service(self):
+        cmd = "uci -P/var/state get network.wan.service"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _get_dns(self):
+        """ TODO get dns server names <<VERIFY is correct>>
+        """
+        cmd = "uci -P/var/state get network.wan.dns"
+        return self._tc.execute_command(cmd).splitlines()[0]
+
+    def _check_file(self, usb_id, filename):
+        """ Checks if a file exits in usb slot
+        returns true if found
+        """
+        cmd = "ls /mnt/usb-%s| grep %s" %(usb_id, filename)
+        return filename == self._tc.execute_command(cmd).splitlines()[0]
+
+    def _delete_file(self, usb_id, filename):
+        cmd = "rm /mnt/usb-%s/%s" %(usb_id, filename)
+        self._tc.execute_command(cmd)
+
+    def compute_default_info(self):
+        tmp = self._get_mac_address()
+        result = re.search('(([A-Fa-f0-9]{2}):?([A-Fa-f0-9]{2}):?([A-Fa-f0-9]{2}):?([A-Fa-f0-9]{2}):?([A-Fa-f0-9]{2}):?([A-Fa-f0-9]{2}))', tmp)
+        if not result:
+            print "Wrong MacAddress format"
+            sys.exit(1)
+        macaddr = (result.group(2)+result.group(3)+result.group(4)+result.group(5)+result.group(6)+result.group(7)).lower()
+        ssidpostfix=str.format("%04d" % ((int(macaddr[6:12],16))%10000))
+        m=md5.new();
+        m.update(macaddr);
+        password=m.hexdigest()
+        return "PORTAL_"+ssidpostfix, "PORTAL_FASTLANE_"+ssidpostfix, password[:8]
+
+    @atexit.register
+    def goodbye():
+        print "You are now leaving the Python sector."
+
+
+if __name__ == '__main__':
+    tester = OpenWrtCore()
+    tester._connect('192.168.8.1', '~#', 'root', 'CassiniRedwwod42562072Portal')
+    print tester._check_file(1, 'local_file_FTP.log')
+
+
+class OpenWrtError(Exception):
+    pass
