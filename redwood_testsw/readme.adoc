@@ -1,4 +1,4 @@
-= Redwood Test Automation Framework
+= Test Automation Framework
 
 == Requirements :
 
